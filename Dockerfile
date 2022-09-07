@@ -2,6 +2,6 @@ FROM nginx:latest
 
 WORKDIR /app
 RUN apt-get update && \
-  apt-install vim -y
+  apt-get install vim -y
 
-COPY . /usr/share/nginx
+COPY html /usr/share/nginx/html
