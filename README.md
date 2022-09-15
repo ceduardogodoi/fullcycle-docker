@@ -28,3 +28,15 @@ docker run -it ceduardogodoi/hello echo "Oi"
 > `echo "Oi"` substituirá o comando em CMD
 
 - ENTRYPOINT é um comando fixo, o comando que está nele não será substituído
+
+## Subindo imagem para o DockerHub
+
+```bash
+# caso esteja logado
+docker logout
+
+docker login
+
+# docker push usuario/nome_da_imagem
+docker push ceduardogodoi/nginx-fullcycle
+```
