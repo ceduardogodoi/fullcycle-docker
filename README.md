@@ -40,3 +40,11 @@ docker login
 # docker push usuario/nome_da_imagem
 docker push ceduardogodoi/nginx-fullcycle
 ```
+
+## Tipos de Network
+
+- **bridge**: (o mais comum) comunicação entre containers
+- **host**: (2do mais comum) mescla network do docker com o host do docker
+- **overlay**: comunicação entre containers em máquinas diferentes
+- **macvlan**: seta macaddress num container que faz parecer que está plugado na sua rede
+- **none**: nenhuma rede no container, ele roda de forma isolada
