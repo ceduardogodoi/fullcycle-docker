@@ -48,3 +48,22 @@ docker push ceduardogodoi/nginx-fullcycle
 - **overlay**: comunicação entre containers em máquinas diferentes
 - **macvlan**: seta macaddress num container que faz parecer que está plugado na sua rede
 - **none**: nenhuma rede no container, ele roda de forma isolada
+
+### Criando uma network e comandos relacionados
+
+```bash
+# criando uma rede
+docker network create --driver bridge minharede
+
+# criando container na rede bridge nomeada
+docker run -d -it --name ubuntu1 --network minharede bash
+
+# listar redes
+docker network ls
+
+# inspecionar redes
+docker network inspect minharede
+
+# conetar um container a uma rede
+docker network connect minharede ubuntu3
+```
