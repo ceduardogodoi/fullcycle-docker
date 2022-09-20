@@ -95,3 +95,8 @@ cd node
 
 docker run --rm -it --name node -v $(pwd)/:/usr/src/app node:15 bash
 ```
+
+### Gerando uma imagem a partir de um Dockerfile.prod (como exemplo)
+```bash
+docker build -t ceduardogodoi/hello-express . -f Dockerfile.prod
+```
