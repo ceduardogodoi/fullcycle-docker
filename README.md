@@ -83,3 +83,15 @@ curl http://host.docker.internal:8000
 # testar
 curl http://gateway.docker.internal:8000
 ```
+
+### Exemplo: trabalhando com node sem ter node instalado
+
+- Rodar imagem do node com volume apontando para a minha pasta local chamada `node` e no container a pasta `/usr/src/app`
+
+```bash
+mkdir node
+
+cd node
+
+docker run --rm -it --name node -v $(pwd)/:/usr/src/app node:15 bash
+```
