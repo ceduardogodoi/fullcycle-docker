@@ -1,12 +1,14 @@
 # Comandos
 
 ## Criar imagem
+
 ```bash
 # -t: --tag
 docker build -t ceduardogodoi/nginx-com-vim:latest .
 ```
 
 ## Rodar imagem entrando em seu bash
+
 ```bash
 docker run -it ceduardogodoi/nginx-com-vim bash
 ```
@@ -14,6 +16,7 @@ docker run -it ceduardogodoi/nginx-com-vim bash
 ## ENTRYPOINT vs CMD
 
 Arquivo Dockerfile de exemplo
+
 ```Dockerfile
 FROM ubuntu:latest
 
@@ -22,9 +25,11 @@ CMD [ "WORLD" ]
 ```
 
 - CMD é um comando que pode ser substituído
+
 ```bash
 docker run -it ceduardogodoi/hello echo "Oi"
 ```
+
 > `echo "Oi"` substituirá o comando em CMD
 
 - ENTRYPOINT é um comando fixo, o comando que está nele não será substituído
@@ -66,4 +71,15 @@ docker network inspect minharede
 
 # conetar um container a uma rede
 docker network connect minharede ubuntu3
+```
+
+### Acessando host docker a partir de um container
+
+Exemplo:
+
+```bash
+curl http://host.docker.internal:8000
+
+# testar
+curl http://gateway.docker.internal:8000
 ```
