@@ -97,6 +97,41 @@ docker run --rm -it --name node -v $(pwd)/:/usr/src/app node:15 bash
 ```
 
 ### Gerando uma imagem a partir de um Dockerfile.prod (como exemplo)
+
 ```bash
 docker build -t ceduardogodoi/hello-express . -f Dockerfile.prod
+```
+
+### Docker Compose (docker-compose)
+
+- Executar
+
+```bash
+docker-compose up
+```
+
+- Arquivo exemplo
+
+```yaml
+# docker-compose.yaml
+version: "3"
+
+services:
+  laravel:
+    image: ceduardogodoi/laravel:prod
+    container_name: laravel
+    networks:
+      - laranet
+
+  nginx:
+    image: ceduardogodoi/nginx:prod
+    container_name: nginx
+    networks:
+      - laranet
+    ports:
+      - "8080:80"
+
+networks:
+  laranet:
+    driver: bridge
 ```
