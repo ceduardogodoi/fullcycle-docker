@@ -136,7 +136,7 @@ networks:
 # subir imagens usando o docker-compose
 docker-compose up
 
-# rodar sem travar o terminar (detached)
+# rodar sem travar o terminal (detached)
 docker-compose up -d
 
 # buildar novamente imagens do compose
