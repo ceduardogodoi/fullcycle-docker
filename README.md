@@ -104,12 +104,6 @@ docker build -t ceduardogodoi/hello-express . -f Dockerfile.prod
 
 ### Docker Compose (docker-compose)
 
-- Executar
-
-```bash
-docker-compose up
-```
-
 - Arquivo exemplo
 
 ```yaml
@@ -134,4 +128,17 @@ services:
 networks:
   laranet:
     driver: bridge
+```
+
+- Executar
+
+```bash
+# subir imagens usando o docker-compose
+docker-compose up
+
+# rodar sem travar o terminar (detached)
+docker-compose up -d
+
+# buildar novamente imagens do compose
+docker-compose up -d --build
 ```
