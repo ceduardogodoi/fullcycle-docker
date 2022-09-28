@@ -1,0 +1,12 @@
+FROM golang:latest AS builder
+
+COPY ./main.go /go/src/
+WORKDIR /go/src/
+RUN go mod init fullcycle/challenge1 && \
+  go build -o .
+
+FROM scratch
+COPY --from=builder /go/src/challenge1 /go/src/
+WORKDIR /go/src/
+
+ENTRYPOINT [ "./challenge1" ]
