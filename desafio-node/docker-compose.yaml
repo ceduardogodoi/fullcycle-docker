@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - desafio
+    tty: true
+
+  app:
+    build:
+      context: app
+    container_name: app
+    ports:
+      - "3000:3000"
+    networks:
+      - desafio
+    tty: true
+
+networks:
+  desafio:
+    driver: bridge
