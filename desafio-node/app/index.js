@@ -19,8 +19,17 @@ const app = express()
 
 app.get('/', (_, response) => {
   connection.query('SELECT * FROM people', (error, results, fields) => {
-    const person = results[results.length - 1]
-    response.send(`<h1>${person.name} ${person.id}</h1>`)
+    const people = results
+    response.send(`
+      <main>
+        <h1>Full Cycle Rocks!</h1>
+
+        <p>Lista de nomes cadastrada no banco de dados.</p>
+        <ul>
+          ${people.map(person => `<li>${person.name} ${person.id}</li>`)}
+        </ul>
+      </main>
+    `)
   })
 })
 
