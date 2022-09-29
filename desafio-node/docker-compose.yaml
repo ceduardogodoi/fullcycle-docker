@@ -25,6 +25,10 @@ services:
       - db
     command: npm start
 
+  nginx:
+    build:
+      context: nginx
+
 networks:
   desafio:
     driver: bridge
